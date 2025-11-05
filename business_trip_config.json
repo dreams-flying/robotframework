@@ -1,0 +1,410 @@
+{
+  "metadata": {
+    "url": "https://h5-office.bestpay.com.cn/sec-iam-plus-h5/index.html#/portal/list",
+    "total_operations": 48,
+    "navigation_steps": 5,
+    "form_fields": 11
+  },
+  "navigation": {
+    "sequence": [
+      "OA系统",
+      "#magnet_8490099577463589529",
+      "tab: 员工自助",
+      "link: 员工出差申请单-新",
+      "row: 出差类型"
+    ]
+  },
+  "form_fields": {
+    "STIME": {
+      "full_name": "cell: WF_ATS_LEAVEINFO.STIME",
+      "value": "08:30",
+      "type": "click",
+      "line": 23
+    },
+    "ETIME": {
+      "full_name": "cell: WF_ATS_LEAVEINFO.ETIME",
+      "value": "17:30",
+      "type": "click",
+      "line": 27
+    },
+    "APPCAUSE": {
+      "full_name": "cell: WF_ATS_LEAVEINFO.APPCAUSE",
+      "value": "参加学术会议",
+      "type": "fill",
+      "line": 29
+    },
+    "COST": {
+      "full_name": "cell: WF_ATS_LEAVEINFO.COST",
+      "value": "否",
+      "type": "click",
+      "line": 33
+    },
+    "FROMCITY": {
+      "full_name": "cell: WF_ATS_TRAVLE.FROMCITY",
+      "value": "上海",
+      "type": "check",
+      "line": 37
+    },
+    "TOCITY": {
+      "full_name": "cell: WF_ATS_TRAVLE.TOCITY",
+      "value": "北京",
+      "type": "check",
+      "line": 40
+    },
+    "VEHICLE1": {
+      "full_name": "cell: WF_ATS_TRAVLE.VEHICLE1",
+      "value": "飞机",
+      "type": "click",
+      "line": 42
+    },
+    "ISSTAY": {
+      "full_name": "cell: WF_ATS_TRAVLE.ISSTAY",
+      "value": "是",
+      "type": "click",
+      "line": 44
+    },
+    "STAYDAYS": {
+      "full_name": "cell: WF_ATS_TRAVLE.STAYDAYS",
+      "value": "3",
+      "type": "fill",
+      "line": 46
+    },
+    "BZ_COMP": {
+      "full_name": "cell: WF_ATS_TRAVLE.BZ_COMP",
+      "value": "天翼支付科技有限公司（本部）",
+      "type": "check",
+      "line": 48
+    },
+    "PRODUCTA": {
+      "full_name": "cell: WF_ATS_TRAVLE.PRODUCTA",
+      "value": "是",
+      "type": "click",
+      "line": 56
+    }
+  },
+  "operations_by_type": {
+    "expect_popup": [
+      {
+        "line": 10,
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 13,
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      }
+    ],
+    "click": [
+      {
+        "line": 11,
+        "target": "get_by_text: OA系统",
+        "value": null,
+        "modifiers": [
+          "first"
+        ]
+      },
+      {
+        "line": 14,
+        "target": "locator: #magnet_8490099577463589529",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 16,
+        "target": "get_by_role: tab: 员工自助",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 17,
+        "target": "get_by_role: link: 员工出差申请单-新",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 18,
+        "target": "get_by_role: row: 出差类型",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 19,
+        "target": "get_by_role: option: 外地出差",
+        "value": "外地出差",
+        "modifiers": []
+      },
+      {
+        "line": 20,
+        "target": "get_by_role: cell: WF_ATS_LEAVEINFO.SDATE",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 21,
+        "target": "get_by_role: cell",
+        "value": null,
+        "modifiers": [
+          "first"
+        ]
+      },
+      {
+        "line": 22,
+        "target": "get_by_role: cell: WF_ATS_LEAVEINFO.STIME",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 23,
+        "target": "get_by_role: option: 08:30",
+        "value": "08:30",
+        "modifiers": []
+      },
+      {
+        "line": 24,
+        "target": "get_by_role: cell: WF_ATS_LEAVEINFO.EDATE",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 25,
+        "target": "get_by_role: cell",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 26,
+        "target": "get_by_role: cell: WF_ATS_LEAVEINFO.ETIME",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 27,
+        "target": "get_by_role: option: 17:30",
+        "value": "17:30",
+        "modifiers": []
+      },
+      {
+        "line": 28,
+        "target": "get_by_role: cell: WF_ATS_LEAVEINFO.APPCAUSE",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 30,
+        "target": "get_by_role: cell: WF_ATS_LEAVEINFO.COST",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 32,
+        "target": "get_by_role: textbox: 否",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 33,
+        "target": "get_by_role: option: 否",
+        "value": "否",
+        "modifiers": []
+      },
+      {
+        "line": 34,
+        "target": "get_by_role: button: 了解",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 35,
+        "target": "get_by_role: cell: WF_ATS_TRAVLE.FROMCITY",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 36,
+        "target": "locator: span",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 38,
+        "target": "get_by_role: cell: WF_ATS_TRAVLE.TOCITY",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 39,
+        "target": "locator: span",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 41,
+        "target": "get_by_role: cell: WF_ATS_TRAVLE.VEHICLE1",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 42,
+        "target": "get_by_role: option: 飞机",
+        "value": "飞机",
+        "modifiers": []
+      },
+      {
+        "line": 43,
+        "target": "get_by_role: cell: WF_ATS_TRAVLE.ISSTAY",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 44,
+        "target": "get_by_role: option: 是",
+        "value": "是",
+        "modifiers": []
+      },
+      {
+        "line": 45,
+        "target": "get_by_role: cell: WF_ATS_TRAVLE.STAYDAYS",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 47,
+        "target": "get_by_role: cell: WF_ATS_TRAVLE.BZ_COMP",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 49,
+        "target": "get_by_role: cell: WF_ATS_TRAVLE.BZ_REIMBU",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 50,
+        "target": "locator: span",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 51,
+        "target": "locator: span",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 52,
+        "target": "nth: 1",
+        "value": null,
+        "modifiers": [
+          "nth(1)"
+        ]
+      },
+      {
+        "line": 53,
+        "target": "get_by_role: cell: WF_ATS_TRAVLE.PRODUCTA",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 54,
+        "target": "get_by_role: option: 全产品线摊销",
+        "value": "全产品线摊销",
+        "modifiers": []
+      },
+      {
+        "line": 55,
+        "target": "get_by_role: row: 是否为研发事项出差 研发项目名称",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 56,
+        "target": "get_by_role: option: 是",
+        "value": "是",
+        "modifiers": []
+      },
+      {
+        "line": 57,
+        "target": "get_by_role: cell: WF_ATS_TRAVLE.RDPROJECT",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 58,
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      }
+    ],
+    "fill": [
+      {
+        "line": 29,
+        "target": "get_by_role: cell: WF_ATS_LEAVEINFO.APPCAUSE",
+        "value": "参加学术会议",
+        "modifiers": []
+      },
+      {
+        "line": 31,
+        "target": "get_by_role: cell: WF_ATS_LEAVEINFO.COST",
+        "value": "3500",
+        "modifiers": []
+      },
+      {
+        "line": 46,
+        "target": "get_by_role: cell: WF_ATS_TRAVLE.STAYDAYS",
+        "value": "3",
+        "modifiers": []
+      }
+    ],
+    "check": [
+      {
+        "line": 37,
+        "target": "get_by_role: radio: 上海",
+        "value": "上海",
+        "modifiers": []
+      },
+      {
+        "line": 40,
+        "target": "get_by_role: radio: 北京",
+        "value": "北京",
+        "modifiers": []
+      },
+      {
+        "line": 48,
+        "target": "get_by_role: radio: 天翼支付科技有限公司（本部）",
+        "value": "天翼支付科技有限公司（本部）",
+        "modifiers": []
+      }
+    ],
+    "wait_timeout": [
+      {
+        "line": 59,
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      }
+    ]
+  },
+  "wait_operations": [
+    {
+      "line": 59,
+      "type": "timeout",
+      "value": "5000"
+    }
+  ],
+  "popup_operations": [
+    {
+      "line": 10,
+      "variable": "page1_info",
+      "code": "with page.expect_popup() as page1_info:"
+    },
+    {
+      "line": 13,
+      "variable": "page2_info",
+      "code": "with page1.expect_popup() as page2_info:"
+    }
+  ]
+}
