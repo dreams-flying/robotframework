@@ -1,0 +1,31 @@
+{
+  "url": "https://h5-office.bestpay.com.cn/sec-iam-plus-h5/index.html#/portal/list",
+  "navigation_path": [
+    "OA系统",
+    "员工自助",
+    "员工请假申请单"
+  ],
+  "form_data": {
+    "leave_type": "事假",
+    "start_date": "5",
+    "start_time": "15:30",
+    "end_date": "7",
+    "end_time": "19:",
+    "location": "上海",
+    "reason": "个人事宜"
+  },
+  "locators": {
+    "oa_system_text": "OA系统",
+    "hr_system_id": "#magnet_8490099577463589529",
+    "employee_self_service_tab": "员工自助",
+    "leave_application_link": "员工请假申请单"
+  },
+  "field_names": {
+    "leave_type": "WF_ATS_LEAVEINFO.LVTYPE",
+    "start_date": "WF_ATS_LEAVEINFO.SDATE",
+    "start_time": "WF_ATS_LEAVEINFO.STIME",
+    "end_date": "WF_ATS_LEAVEINFO.EDATE",
+    "end_time": "WF_ATS_LEAVEINFO.ETIME",
+    "location": "WF_ATS_LEAVEINFO.PLACE"
+  }
+}
