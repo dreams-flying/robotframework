@@ -127,14 +127,16 @@ def convert_playwright_to_parameterized(script_content: str, function_name: str 
             in_function = True
             continue
 
-        # 跳过初始化代码
+        # 跳过初始化代码和重复操作
         if any(skip in stripped for skip in [
             'browser = playwright',
             'context = browser.new_context',
             'page = context.new_page',
+            'page.goto(',           # 跳过原始goto（已有参数化版本）
             'with sync_playwright',
             'browser.close',
             'context.close',
+            'run(playwright)',      # 跳过原函数调用
         ]):
             continue
 

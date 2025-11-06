@@ -25,7 +25,6 @@ def execute_automation(
     # 导航到页面
     page.goto(url)
 
-    page.goto("https://h5-office.bestpay.com.cn/sec-iam-plus-h5/index.html#/portal/list")
     # Popup操作: page1
     with page.expect_popup() as page1_info:
         page.get_by_text("OA系统").first.click()
@@ -80,7 +79,6 @@ def execute_automation(
     page2.get_by_role("cell", name="WF_ATS_TRAVLE.RDPROJECT").get_by_role("textbox").click()
     page2.get_by_text("年中国电信天翼电子商务有限公司线下支付能力研发项目").click()
     page2.wait_for_timeout(5000)
-    run(playwright)
 
     # 清理
     context.close()
