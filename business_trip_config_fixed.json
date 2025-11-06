@@ -1,0 +1,378 @@
+{
+  "metadata": {
+    "url": "https://h5-office.bestpay.com.cn/sec-iam-plus-h5/index.html#/portal/list",
+    "total_operations": 46,
+    "navigation_steps": 1,
+    "form_fields": 0,
+    "page_variables": [
+      "page",
+      "page1",
+      "page2"
+    ]
+  },
+  "navigation": {
+    "sequence": [
+      "人力系统"
+    ]
+  },
+  "form_fields": {},
+  "operations_by_type": {
+    "click": [
+      {
+        "line": 11,
+        "page": "page",
+        "target": "first: ",
+        "value": null,
+        "modifiers": [
+          "first"
+        ]
+      },
+      {
+        "line": 14,
+        "page": "page1",
+        "target": "get_by_title: 人力系统",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 16,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 17,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 18,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 19,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "外地出差",
+        "modifiers": []
+      },
+      {
+        "line": 20,
+        "page": "page2",
+        "target": "get_by_placeholder: YYYYMMDD",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 21,
+        "page": "page2",
+        "target": "first: ",
+        "value": null,
+        "modifiers": [
+          "first"
+        ]
+      },
+      {
+        "line": 22,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 23,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "08:30",
+        "modifiers": []
+      },
+      {
+        "line": 24,
+        "page": "page2",
+        "target": "get_by_placeholder: YYYYMMDD",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 25,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 26,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 27,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "17:30",
+        "modifiers": []
+      },
+      {
+        "line": 28,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 30,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 32,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 33,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "否",
+        "modifiers": []
+      },
+      {
+        "line": 34,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 35,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 36,
+        "page": "page2",
+        "target": "filter: 上海上海",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 38,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 39,
+        "page": "page2",
+        "target": "filter: 北京北京",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 41,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 42,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "飞机",
+        "modifiers": []
+      },
+      {
+        "line": 43,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 44,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "是",
+        "modifiers": []
+      },
+      {
+        "line": 45,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 47,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 49,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 50,
+        "page": "page2",
+        "target": "filter: 天翼支付科技有限公司（本部）",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 51,
+        "page": "page2",
+        "target": "locator: span",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 52,
+        "page": "page2",
+        "target": "nth: 1",
+        "value": null,
+        "modifiers": [
+          "nth(1)"
+        ]
+      },
+      {
+        "line": 53,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 54,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "全产品线摊销",
+        "modifiers": []
+      },
+      {
+        "line": 55,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 56,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "是",
+        "modifiers": []
+      },
+      {
+        "line": 57,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": null,
+        "modifiers": []
+      },
+      {
+        "line": 58,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      }
+    ],
+    "fill": [
+      {
+        "line": 29,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": "参加学术会议",
+        "modifiers": []
+      },
+      {
+        "line": 31,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": "3500",
+        "modifiers": []
+      },
+      {
+        "line": 46,
+        "page": "page2",
+        "target": "get_by_role: textbox",
+        "value": "3",
+        "modifiers": []
+      }
+    ],
+    "check": [
+      {
+        "line": 37,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "上海",
+        "modifiers": []
+      },
+      {
+        "line": 40,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "北京",
+        "modifiers": []
+      },
+      {
+        "line": 48,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": "天翼支付科技有限公司（本部）",
+        "modifiers": []
+      }
+    ],
+    "wait_timeout": [
+      {
+        "line": 59,
+        "page": "page2",
+        "target": "unknown: ",
+        "value": null,
+        "modifiers": []
+      }
+    ]
+  },
+  "wait_operations": [
+    {
+      "line": 59,
+      "type": "timeout",
+      "value": "5000"
+    }
+  ],
+  "popup_operations": [
+    {
+      "line": 10,
+      "variable": "page1_info",
+      "parent": "page",
+      "code": "with page.expect_popup() as page1_info:"
+    },
+    {
+      "line": 13,
+      "variable": "page2_info",
+      "parent": "page1",
+      "code": "with page1.expect_popup() as page2_info:"
+    }
+  ]
+}
