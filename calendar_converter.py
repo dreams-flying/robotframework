@@ -83,10 +83,12 @@ def try_convert_date_selection(lines: List[str], index: int) -> Optional[dict]:
         return None
 
     # 检查第2行：是否是点击日期单元格
-    # 匹配: page2.get_by_role("cell", name=date_day_5, exact=True).first.click()
-    # 或: page2.get_by_role("cell", name=date_day_7, exact=True).click()
-    # ✅ .first 是可选的
-    cell_pattern = r'(page\d*)\s*\.get_by_role\("cell",\s*name=([a-zA-Z_]\w*),\s*exact=True\)(?:\.first)?\.click\(\)'
+    # 匹配以下所有模式:
+    #   - page2.get_by_role("cell", name=date_day_5, exact=True).first.click()
+    #   - page2.get_by_role("cell", name=date_day_7, exact=True).click()
+    #   - page2.get_by_role("cell", name=date_day_8, exact=True).nth(1).click()
+    # ✅ .first 和 .nth(数字) 都是可选的
+    cell_pattern = r'(page\d*)\s*\.get_by_role\("cell",\s*name=([a-zA-Z_]\w*),\s*exact=True\)(?:\.(?:first|nth\(\d+\)))?\.click\(\)'
     match2 = re.search(cell_pattern, line2)
 
     if not match2:
