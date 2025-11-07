@@ -72,8 +72,11 @@ def try_convert_date_selection(lines: List[str], index: int) -> Optional[dict]:
     if index >= len(lines) - 1:
         return None
 
-    line1 = lines[index].strip()
-    line2 = lines[index + 1].strip()
+    line1_original = lines[index]  # ✅ 保留原始行（含缩进）
+    line2_original = lines[index + 1]  # ✅ 保留原始行（含缩进）
+
+    line1 = line1_original.strip()  # 用于内容检查
+    line2 = line2_original.strip()  # 用于内容检查
 
     # 检查第1行：是否是点击 YYYYMMDD 占位符的日期输入框
     if '.get_by_placeholder("YYYYMMDD").click()' not in line1:
@@ -91,12 +94,12 @@ def try_convert_date_selection(lines: List[str], index: int) -> Optional[dict]:
     page_var = match2.group(1)  # page2
     date_param = match2.group(2)  # date_day_5
 
-    # 提取第1行的定位器部分（去掉 .click()）
-    locator_match = re.match(r'(\s*)(.*?)\.click\(\)\s*$', line1)
+    # ✅ 从原始行提取缩进和定位器（去掉 .click()）
+    locator_match = re.match(r'(\s*)(.*?)\.click\(\)\s*$', line1_original)
     if not locator_match:
         return None
 
-    indent = locator_match.group(1)
+    indent = locator_match.group(1)  # ✅ 从原始行获取缩进
     locator_code = locator_match.group(2)
 
     # 生成转换后的代码
@@ -125,8 +128,11 @@ def try_convert_time_selection(lines: List[str], index: int) -> Optional[dict]:
     if index >= len(lines) - 1:
         return None
 
-    line1 = lines[index].strip()
-    line2 = lines[index + 1].strip()
+    line1_original = lines[index]  # ✅ 保留原始行（含缩进）
+    line2_original = lines[index + 1]  # ✅ 保留原始行（含缩进）
+
+    line1 = line1_original.strip()  # 用于内容检查
+    line2 = line2_original.strip()  # 用于内容检查
 
     # 检查第2行：是否是点击时间选项
     # 匹配: page2.get_by_role("option", name=start_time).click()
@@ -148,12 +154,12 @@ def try_convert_time_selection(lines: List[str], index: int) -> Optional[dict]:
     page_var = match2.group(1)  # page2
     time_param = match2.group(2)  # start_time
 
-    # 提取第1行的定位器部分（去掉 .click()）
-    locator_match = re.match(r'(\s*)(.*?)\.click\(\)\s*$', line1)
+    # ✅ 从原始行提取缩进和定位器（去掉 .click()）
+    locator_match = re.match(r'(\s*)(.*?)\.click\(\)\s*$', line1_original)
     if not locator_match:
         return None
 
-    indent = locator_match.group(1)
+    indent = locator_match.group(1)  # ✅ 从原始行获取缩进
     locator_code = locator_match.group(2)
 
     # 生成转换后的代码
