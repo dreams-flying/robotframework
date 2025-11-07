@@ -84,7 +84,9 @@ def try_convert_date_selection(lines: List[str], index: int) -> Optional[dict]:
 
     # 检查第2行：是否是点击日期单元格
     # 匹配: page2.get_by_role("cell", name=date_day_5, exact=True).first.click()
-    cell_pattern = r'(page\d*)\s*\.get_by_role\("cell",\s*name=([a-zA-Z_]\w*),\s*exact=True\)\.first\.click\(\)'
+    # 或: page2.get_by_role("cell", name=date_day_7, exact=True).click()
+    # ✅ .first 是可选的
+    cell_pattern = r'(page\d*)\s*\.get_by_role\("cell",\s*name=([a-zA-Z_]\w*),\s*exact=True\)(?:\.first)?\.click\(\)'
     match2 = re.search(cell_pattern, line2)
 
     if not match2:
