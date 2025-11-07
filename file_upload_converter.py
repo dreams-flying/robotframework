@@ -46,11 +46,11 @@ def convert_file_upload_operations(source_code: str) -> str:
             # 找到了文件上传模式
             if upload_pattern['delete_first_line']:
                 # 跳过第一行（点击"选择"的行）
-                converted_lines.append(upload_pattern['converted_code'])
+                converted_lines.append(upload_pattern['code'])
                 i = upload_pattern['next_index']
             else:
                 # 只转换当前行
-                converted_lines.append(upload_pattern['converted_code'])
+                converted_lines.append(upload_pattern['code'])
                 i += 1
             continue
 
@@ -72,7 +72,7 @@ def try_convert_file_upload(lines: List[str], index: int) -> Optional[dict]:
     模式 2: 单行模式（只需转换）
         page.get_by_role("button", name="选择").set_input_files([...])
 
-    返回: {'converted_code': 转换后的代码, 'next_index': 下一行索引, 'delete_first_line': 是否删除第一行}
+    返回: {'code': 转换后的代码, 'next_index': 下一行索引, 'delete_first_line': 是否删除第一行}
     """
     if index >= len(lines):
         return None
@@ -199,7 +199,7 @@ def convert_set_input_files_line(lines: List[str], index: int) -> Optional[dict]
     converted = f"{indent}{page_var}.locator('input[type=\"file\"]').set_input_files({params})"
 
     return {
-        'converted_code': converted,
+        'code': converted,
         'next_index': index + 1,
         'delete_first_line': False
     }
