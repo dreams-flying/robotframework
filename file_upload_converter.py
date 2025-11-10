@@ -34,24 +34,26 @@ def convert_file_upload_operations(source_code: str) -> str:
     while i < len(lines):
         line = lines[i].rstrip()
 
-        # 跳过空行和注释
-        if not line.strip() or line.strip().startswith('#'):
-            converted_lines.append(line)
-            i += 1
-            continue
-
-        # 检查是否是文件上传模式
+        # 先检查是否是文件上传模式（包括空行）
         upload_pattern = try_convert_file_upload(lines, i)
         if upload_pattern:
-            # 找到了文件上传模式
-            if upload_pattern['delete_first_line']:
-                # 跳过第一行（点击"选择"的行）
+            if upload_pattern.get('delete_first_line'):
+                # 这是两行模式：删除 click 行和中间的空行，添加转换后的 set_input_files
+                # 同时删除 click 行之前的空行（如果存在）
+                if converted_lines and not converted_lines[-1].strip():
+                    converted_lines.pop()  # 删除最后一个空行
                 converted_lines.append(upload_pattern['code'])
                 i = upload_pattern['next_index']
             else:
-                # 只转换当前行
+                # 单行模式：只转换当前行
                 converted_lines.append(upload_pattern['code'])
                 i += 1
+            continue
+
+        # 空行和注释：保持原样
+        if not line.strip() or line.strip().startswith('#'):
+            converted_lines.append(line)
+            i += 1
             continue
 
         # 不匹配任何模式，保持原样
@@ -67,12 +69,13 @@ def try_convert_file_upload(lines: List[str], index: int) -> Optional[dict]:
 
     模式 1: 两行模式（需要删除第一行）
         第1行: page.get_by_role("button", name="选择", exact=True).click()
-        第2行: page.get_by_role("button", name="选择", exact=True).set_input_files([...])
+        （可能有空行/注释）
+        第N行: page.get_by_role("button", name="选择", exact=True).set_input_files([...])
 
     模式 2: 单行模式（只需转换）
         page.get_by_role("button", name="选择").set_input_files([...])
 
-    返回: {'code': 转换后的代码, 'next_index': 下一行索引, 'delete_first_line': 是否删除第一行}
+    返回: {'code': 转换后的代码, 'next_index': 下一行索引, 'delete_first_line': 是否删除第一行, 'skip_empty_lines': 要跳过的空行数}
     """
     if index >= len(lines):
         return None
@@ -85,20 +88,39 @@ def try_convert_file_upload(lines: List[str], index: int) -> Optional[dict]:
         # 这是 set_input_files 的行，需要转换
         return convert_set_input_files_line(lines, index)
 
-    # 检查是否是点击"选择"按钮的行，且下一行是 set_input_files
-    if index < len(lines) - 1:
-        line2_original = lines[index + 1]
-        line2 = line2_original.strip()
+    # 检查是否是点击"选择"按钮的行
+    if not is_select_button_click(line1):
+        return None
 
-        # 检查模式：第1行点击"选择"，第2行 set_input_files
-        if is_select_button_click(line1) and '.set_input_files(' in line2:
+    # 向后查找 set_input_files 行（跳过空行和注释）
+    next_code_index = index + 1
+    empty_lines_between = []
+
+    while next_code_index < len(lines):
+        next_line = lines[next_code_index].strip()
+
+        # 如果是空行或注释，记录并继续查找
+        if not next_line or next_line.startswith('#'):
+            empty_lines_between.append(next_code_index)
+            next_code_index += 1
+            continue
+
+        # 找到了非空非注释行
+        break
+
+    # 检查找到的行是否是 set_input_files
+    if next_code_index < len(lines):
+        next_line = lines[next_code_index].strip()
+
+        if '.set_input_files(' in next_line:
             # 检查两行是否操作同一个元素
-            if is_same_element(line1, line2):
-                # 这是两行模式，转换第2行，删除第1行
-                result = convert_set_input_files_line(lines, index + 1)
+            if is_same_element(line1, next_line):
+                # 这是两行模式，转换 set_input_files 行，删除 click 行和中间的空行
+                result = convert_set_input_files_line(lines, next_code_index)
                 if result:
                     result['delete_first_line'] = True
-                    result['next_index'] = index + 2  # 跳过两行
+                    result['next_index'] = next_code_index + 1  # 跳到 set_input_files 的下一行
+                    result['empty_lines_to_delete'] = empty_lines_between  # 要删除的空行索引
                     return result
 
     return None
